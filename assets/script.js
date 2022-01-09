@@ -123,14 +123,24 @@ function generatePassword() {
 
   let passwordString = filtered.join('');                                             //LEARNED HOW TO TURN ARRAYS INTO STRINGS HERE https://www.w3schools.com/jsref/jsref_join.asp
   
-  console.log(passwordString);
+  
 
 
+    function makePassword(length) {
+      var length           = passwordLength;
+      var result           = '';
+      var characters       = passwordString;
+      var charactersLength = characters.length;
+      for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * 
+  charactersLength));
+    }
+    return result;
+  }
 
 
-  var jumbled = passwordString.split('').sort(function(){return 0.5-Math.random()}).join('');   //Found a good string randomizer here https://stackoverflow.com/questions/3943772/how-do-i-shuffle-the-characters-in-a-string-in-javascript
+  document.getElementById('password').innerHTML = (makePassword(passwordLength));     // figured out how to transfer java strings into html here https://stackoverflow.com/questions/1497481/javascript-password-generator
 
-  console.log(jumbled);    
 
 }
 
@@ -148,7 +158,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  
 
 }
 
@@ -169,53 +179,8 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-// // we attempted to work with numbers first try. Because we knew we would have to compare numbers in the "if" conditional statements. But we decided it was easier to work with strings
-// //
-// //IMPORTANT IMPORTANT IMPORTANT you must open the console to see the results
-// //
-// // create the coices we chose to work with an array of strings.
-// var choices = ['R', 'P', 'S'];
-// //Save the user choice to a variable. the prompt returns a string value.
-// var userChoice = prompt('Rock = R , Paper = P, or Scissors = S?');
-// // this var makes a randon pick of the "choices" array.
-// var robotChoice = choices[Math.floor(Math.random() * choices.length)];
-// // I wanted to make sure the userChoice was an uppercase character. The game will allow incorrect iput such as lowercase and numbers
-// userChoice.toUpperCase();
-
-// function gameResult() {
-//   //there are nine different game outcomes. I thought it was easiest to explicitly type them out and compare.
-//   //this could have been made into a nested loop, i think (not sure).
-//   if (userChoice === 'R' && robotChoice === 'R') {
-//     console.log('Its a Tie');
-//   } else if (userChoice === 'P' && robotChoice === 'P') {
-//     console.log('Its a Tie');
-//   } else if ((userChoice = 'S') && robotChoice === 'S') {
-//     console.log('Its a Tie');
-//   } else if (userChoice === 'R' && robotChoice === 'S') {
-//     console.log('Its a win');
-//   } else if (userChoice === 'P' && robotChoice === 'R') {
-//     console.log('Its a win');
-//   } else if (userChoice === 'S' && robotChoice === 'P') {
-//     console.log('Its a win');
-//   } else if (userChoice === 'R' && robotChoice === 'P') {
-//     console.log('Its a loss');
-//   } else if (userChoice === 'P' && robotChoice === 'S') {
-//     console.log('Its a loss');
-//   } else if (userChoice === 'S' && robotChoice === 'R') {
-//     console.log('Its a loss');
-//   } else {
-//     // do noting
-//   }
-// } //calls the function to console log the game result
-// gameResult();
-
-
-
-
-
 
 // SATURDAY STUDY GROUP NOTES
-
 
 // var passLowercase = confirm(
 //   'Would you like Lowercase?'
@@ -229,9 +194,6 @@ generateBtn.addEventListener("click", writePassword);
 //   'How many Characters would you like. Choose a number between 8 and 128?'
 // ));
 
-
-
-
 // if (passLength >= 8 && passLength <= 128) {
 //   //VALID
 //   alert('Password will be ' + passLength);
@@ -240,64 +202,8 @@ generateBtn.addEventListener("click", writePassword);
 //   alert('Please enter a valid password length!');
 // }
 
-
 // END SATURDAY STUDY GROUP NOTES
 
 
 
 
-
-
-
-//  // PASSWORD LOWERCASE PROMPT
-//  var passwordLowercase = window.confirm('Would you like to include lowercase characters in your password?');
-//  if (passwordLowercase === true) {
-//    window.confirm('Are you sure you want to include lowercase characters in your password?');
-//    passwordLowercase = true
-//  } else {
-//    window.confirm('Are you sure you DO NOT want to include lowercase characters in your password?');
-//    passwordLowercase = false
-//  }
-
- 
-// // PASSWORD UPPERCASE PROMPT
-// var passwordUppercase = window.confirm('Would you like to include uppercase characters in your password?');
-//  if (passwordUppercase === true) {
-//    window.confirm('Are you sure you want to include uppercase characters in your password?');
-//    passwordUppercase = true
-//  } else {
-//    window.confirm('Are you sure you DO NOT want to include uppercase characters in your password?');
-//    passwordUppercase = false
-//  }
-
-// // PASSWORD SPECIAL CHARACTERS PROMPT
-// var passwordSpecial = window.confirm('Would you like to include special characters in your password?');
-//  if (passwordSpecial === true) {
-//    window.confirm('Are you sure you want to include special characters in your password?');
-//    passwordSpecial = true
-//  } else {
-//    window.confirm('Are you sure you DO NOT want to include special characters in your password?');
-//    passwordSpecial = false
-//  }
-
-
-
-
-  // PASSWORD LOWERCASE PROMPT
-
-
-
-  // var lowercaseVar = window.confirm('Would you like to include lowercase characters in your password?');
-  //   if (lowercaseFunction === true) {
-  //     var confirmSelection = window.confirm('Are you sure you want to include lowercase characters in your password?');
-  //       if (confirmSelection === true) {
-  //         passwordLowercase = true;
-  //       } else {
-  //         return lowercaseVar
-  //       }
-      
-  //       }  
-  
-    
-  
- 
