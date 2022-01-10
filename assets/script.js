@@ -115,11 +115,12 @@ function generatePassword() {
   numbersFunction();
   specialFunction();
 
-  
+  //CREATES ARRAY AND FILTERS OUT UNWANTED CHARACTERS
 
   var arr = [passwordLowercase, passwordUppercase ,passwordNumbers, passwordSpecial]  //LEARNED HOW TO FILTER OUT FALSE BOOLEANS AT https://www.techiedelight.com/remove-all-falsy-values-from-an-array-in-javascript/
   var filtered = arr.filter(Boolean);
   
+  //CONVERTS ARRAY INTO ONE STRING AND SHORTENS CONTENT TO DESIRED LENGTH AND RANDOMIZED STRING
 
   let passwordString = filtered.join('');                                             //LEARNED HOW TO TURN ARRAYS INTO STRINGS HERE https://www.w3schools.com/jsref/jsref_join.asp
   
@@ -139,6 +140,7 @@ function generatePassword() {
   }
 
 
+  //PASTES GENERATED PASSWORD ONTO WEB PAGE
   document.getElementById('password').innerHTML = (makePassword(passwordLength));     // figured out how to transfer java strings into html here https://stackoverflow.com/questions/1497481/javascript-password-generator
 
 
@@ -158,7 +160,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  
+  //passwordText.value = password;                                            // DELETED THIS PROVIDED LINE
 
 }
 
